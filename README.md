@@ -1,4 +1,5 @@
 # social-netwrok-api
+
 ## Description
 
 This project is a social network api created to allow user websites to hold large amounts of unstructured data using a NoSQL database. It allows users to be created and allows them to share thoughts and reactions to others' thoughts. 
@@ -19,11 +20,7 @@ Ensure that you have mongodb installed on your device. Make sure tge mongo serve
 
 Below is the link to a video which demonstrates the functionality of the routes in Insomnia.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+https://watch.screencastify.com/v/DNE2187dUusVnDSJcW9p
 
 
 ## License

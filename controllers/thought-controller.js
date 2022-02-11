@@ -37,15 +37,15 @@ const thoughtController = {
         });
     },
     // add thought to user
-    createThought({params, body}, res){
-        Thoughts.create(body)
+    createThought(req, res){
+        Thoughts.create(req.body)
         .then(({_id})=> {
-            return Users.findOneAndUpdate({_id: params.userId}, {$push: {thoughts: _id}}, {new: true});
+            return Users.create({_id: params.userId}, {$push: {thoughts: _id}}, {new: true});
         })
         .then(thoughtData => {
             if (!thoughtData){
                 res.status(404).json({
-                    message: 'Thought not found.'
+                    message: 'Unable to create thought.'
                 });
                 return;
             }
@@ -97,7 +97,7 @@ const thoughtController = {
     },
     // add reaction
     addReaction({params, body}, res){
-        Thoughts.findOneAndUpdate({_id: params.thoughtId}, {$push: {reactions: body}}, {new: true, runValidators: true})
+        Thoughts.create({_id: params.thoughtId}, {$push: {reactions: body}}, {new: true, runValidators: true})
         .populate({
             path: 'reactions',
             select: '-__v'
